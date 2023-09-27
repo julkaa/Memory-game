@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "animejs": "^3.2.1"
+  }
+}

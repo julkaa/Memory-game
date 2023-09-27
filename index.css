@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: oldlace;
+}
+
+.header {
+    background-color: rgb(115, 132, 127);
+    padding: 1rem;
+    margin: 0 auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.header button, #timer {
+    font: inherit;
+    cursor: pointer;
+    padding: 0 2rem;
+    border-radius: 12px;
+    margin-right: 1rem;
+}
+
+
+.header .start-btn {
+    background-color: darkgreen;
+    color: white;
+}
+
+#pause-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 2;
+}
+
+.memory-game.overlay::before {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 475px;
+    height: 480px;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent background color */
+}
+
+.memory-game {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform .1s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+
+    backface-visibility: hidden;
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, .3);
+}
+
+.back-face {
+    background: rgb(115, 132, 127);
+}
+
+.front-face {
+    transform: rotateY(180deg);
+    text-align: center;
+
+    .card-number {
+        font-size: 75px;
+    }
+}
+
+.matching-card {
+    background-color: #aa404f !important;
+    transition-delay: 1s;
+}
+
