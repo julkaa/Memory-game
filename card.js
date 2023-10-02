@@ -10,5 +10,4 @@ export class Card {
             <div class="back-face"></div>
             </div>`;
     }
-
 }
